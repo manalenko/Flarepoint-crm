@@ -3,14 +3,14 @@
 @section('content')
     <div class="col-lg-12 currenttask">
         <table class="table table-hover">
-            <h3>All Departments</h3>
+            <h3>{{__('All Departments')}}</h3>
             <thead>
             <thead>
             <tr>
                 <th>{{ __('Name') }}</th>
                 <th>{{ __('Description') }}</th>
                 @if(Entrust::hasRole('administrator'))
-                    <th>{{ __('Action') }}/th>
+                    <th>{{ __('Action') }}</th>
                 @endif
             </tr>
             </thead>
@@ -25,7 +25,7 @@
             'method' => 'DELETE',
             'route' => ['departments.destroy', $dep->id]
         ]); !!}
-                            {!! Form::submit( __('Delete'), ['class' => 'btn btn-danger', 'onclick' => 'return confirm("Are you sure?")']); !!}
+                            {!! Form::submit( __('Delete'), ['class' => 'btn btn-danger', 'onclick' => 'return confirm("Удалить отдел?")']); !!}
 
                             {!! Form::close(); !!}</td></td>
                     @endif
