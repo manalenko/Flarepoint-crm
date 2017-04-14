@@ -3,7 +3,7 @@
     @include('partials.userheader')
 <div class="col-sm-8">
   <el-tabs active-name="tasks" style="width:100%">
-    <el-tab-pane label="Tasks" name="tasks">
+    <el-tab-pane label="{{ __('Tasks') }}" name="tasks">
         <table class="table table-hover" id="tasks-table">
         <h3>{{ __('Tasks assigned') }}</h3>
             <thead>
@@ -23,7 +23,7 @@
             </thead>
         </table>
     </el-tab-pane>
-    <el-tab-pane label="Leads" name="leads">
+    <el-tab-pane label="{{ __('Leads') }}" name="leads">
       <table class="table table-hover">
         <table class="table table-hover" id="leads-table">
                 <h3>{{ __('Leads assigned') }}</h3>
@@ -45,7 +45,7 @@
                 </thead>
             </table>
     </el-tab-pane>
-    <el-tab-pane label="Clients" name="clients">
+    <el-tab-pane label="{{ __('Clients') }}" name="clients">
          <table class="table table-hover" id="clients-table">
                 <h3>{{ __('Clients assigned') }}</h3>
                 <thead>

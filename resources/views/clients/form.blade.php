@@ -1,5 +1,5 @@
 <div class="form-group">
-    {!! Form::label('name', 'Name:', ['class' => 'control-label']) !!}
+    {!! Form::label('name', 'Имя:', ['class' => 'control-label']) !!}
     {!! 
         Form::text('name',  
         isset($data['owners']) ? $data['owners'][0]['name'] : null, 
@@ -9,7 +9,7 @@
 
 <div class="form-inline">
     <div class="form-group col-sm-6 removeleft">
-        {!! Form::label('vat', 'Vat:', ['class' => 'control-label']) !!}
+        {!! Form::label('vat', 'НДС:', ['class' => 'control-label']) !!}
         {!! 
             Form::text('vat',
             isset($data['vat']) ?$data['vat'] : null,
@@ -18,7 +18,7 @@
     </div>
 
     <div class="form-group col-sm-6 removeleft removeright">
-        {!! Form::label('company_name', 'Company name:', ['class' => 'control-label']) !!}
+        {!! Form::label('company_name', 'Компания:', ['class' => 'control-label']) !!}
         {!! 
             Form::text('company_name',
             isset($data['name']) ? $data['name'] : null, 
@@ -37,7 +37,7 @@
 </div>
 
 <div class="form-group">
-    {!! Form::label('address', 'Address:', ['class' => 'control-label']) !!}
+    {!! Form::label('address', 'Адрес:', ['class' => 'control-label']) !!}
     {!! 
         Form::text('address',
         isset($data['address']) ? $data['address'] : null, 
@@ -47,7 +47,7 @@
 
 <div class="form-inline">
     <div class="form-group col-sm-4 removeleft">
-        {!! Form::label('zipcode', 'Zipcode:', ['class' => 'control-label']) !!}
+        {!! Form::label('zipcode', 'Индекс:', ['class' => 'control-label']) !!}
         {!! 
             Form::text('zipcode',
              isset($data['zipcode']) ? $data['zipcode'] : null, 
@@ -56,7 +56,7 @@
     </div>
 
     <div class="form-group col-sm-8 removeleft removeright">
-        {!! Form::label('city', 'City:', ['class' => 'control-label']) !!}
+        {!! Form::label('city', 'Город:', ['class' => 'control-label']) !!}
         {!! 
             Form::text('city',
             isset($data['city']) ? $data['city'] : null,
@@ -67,7 +67,7 @@
 
 <div class="form-inline">
     <div class="form-group col-sm-6 removeleft">
-        {!! Form::label('primary_number', 'Primary Number:', ['class' => 'control-label']) !!}
+        {!! Form::label('primary_number', 'Телефон:', ['class' => 'control-label']) !!}
         {!! 
             Form::text('primary_number',  
             isset($data['phone']) ? $data['phone'] : null, 
@@ -76,7 +76,7 @@
     </div>
 
     <div class="form-group col-sm-6 removeleft removeright">
-        {!! Form::label('secondary_number', 'Secondary Number:', ['class' => 'control-label']) !!}
+        {!! Form::label('secondary_number', 'Сотовый телефон:', ['class' => 'control-label']) !!}
         {!! 
             Form::text('secondary_number',  
             null, 
@@ -86,7 +86,7 @@
 </div>
 <div class="form-group">
 
-    {!! Form::label('company_type', 'Company type:', ['class' => 'control-label']) !!}
+    {!! Form::label('company_type', 'Тип компании:', ['class' => 'control-label']) !!}
     {!!
         Form::text('company_type',
         isset($data['companydesc']) ? $data['companydesc'] : null,
@@ -94,7 +94,7 @@
     !!}
 </div>
 <div class="form-group">
-    {!! Form::label('industry', 'Industry:', ['class' => 'control-label']) !!}
+    {!! Form::label('industry', 'Направление деятельности:', ['class' => 'control-label']) !!}
     {!!
         Form::select('industry_id',
         $industries,
@@ -106,7 +106,7 @@
 
 
 <div class="form-group">
-    {!! Form::label('user_id', 'Assign user:', ['class' => 'control-label']) !!}
+    {!! Form::label('user_id', 'Назначенный ответственный:', ['class' => 'control-label']) !!}
     {!! Form::select('user_id', $users, null, ['class' => 'form-control ui search selection top right pointing search-select', 'id' => 'search-select']) !!}
 
 </div>

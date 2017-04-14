@@ -12,11 +12,12 @@
 */
 
 $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
+	$faker = Faker\Factory::create('ru_RU');
     return [
         'name' => $faker->name,
         'email' => $faker->email,
         'password' => bcrypt(str_random(10)),
-        'address' => $faker->secondaryAddress(),
+        'address' => $faker->address(),
         'work_number' => $faker->randomNumber(8),
         'personal_number' => $faker->randomNumber(8),
         'remember_token' => str_random(10),
@@ -24,12 +25,13 @@ $factory->define(App\Models\User::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Models\Client::class, function (Faker\Generator $faker) {
+	$faker = Faker\Factory::create('ru_RU');
     return [
         'name' => $faker->name,
         'email' => $faker->email,
         'vat' => $faker->randomNumber(8),
         'company_name' => $faker->company(),
-        'address' => $faker->secondaryAddress(),
+        'address' => $faker->Address(),
         'city' => $faker->city(),
         'zipcode' => $faker->postcode(),
         'primary_number' => $faker->randomNumber(8),
@@ -43,6 +45,7 @@ $factory->define(App\Models\Client::class, function (Faker\Generator $faker) {
 
 
 $factory->define(App\Models\Task::class, function (Faker\Generator $faker) {
+	$faker = Faker\Factory::create('ru_RU');
     return [
         'title' => $faker->sentence,
         'description' => $faker->paragraph,
@@ -57,6 +60,7 @@ $factory->define(App\Models\Task::class, function (Faker\Generator $faker) {
 });
 
 $factory->define(App\Models\Lead::class, function (Faker\Generator $faker) {
+	$faker = Faker\Factory::create('ru_RU');
     return [
         'title' => $faker->sentence,
         'note' => $faker->paragraph,
