@@ -18,7 +18,7 @@
 
     <style>
         body {
-            font-family: 'Lato';
+            font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
         }
 
         .fa-btn {
