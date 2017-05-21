@@ -64,25 +64,25 @@ class TaskActionNotification extends Notification
     {
         switch ($this->action) {
             case 'created':
-                $text = __(':title was created by :creator, and assigned to you', [
+                $text = __(':title задача была создана :creator, и назначена вам', [
                     'title' =>  $this->task->title,
                     'creator' => $this->task->creator->name,
                     ]);
                 break;
             case 'updated_status':
-                $text = __(':title was completed by :username', [
+                $text = __(':title была завершена пользователем :username', [
                     'title' =>  $this->task->title,
                     'username' =>  Auth()->user()->name,
                     ]);
                 break;
             case 'updated_time':
-                $text = __(':username inserted a new time for :title', [
+                $text = __(':username добавил новое время в задачу :title', [
                     'title' =>  $this->task->title,
                     'username' =>  Auth()->user()->name,
                     ]);
                 break;
             case 'updated_assign':
-                $text = __(':username assigned a task to you', [
+                $text = __(':username назначил вам задачу', [
                     'title' =>  $this->task->title,
                     'username' =>  Auth()->user()->name,
                     ]);

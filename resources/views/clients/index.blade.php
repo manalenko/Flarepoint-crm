@@ -26,7 +26,28 @@
         $('#clients-table').DataTable({
             processing: true,
             serverSide: true,
-
+            language: {
+                edit: "Редактировать",
+                search: "Поиск",
+                processing:     "Обработка",
+                lengthMenu:    "Выводить _MENU_ записей",
+                info:           "Показаны записи с _START_ по _END_ из _TOTAL_",
+                infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                infoPostFix:    "",
+                loadingRecords: "Загрузка...",
+                zeroRecords:    "Нет записей",
+                emptyTable:     "Нет данных",
+                paginate: {
+                    first: "Первый",
+                    previous: "Предыдущий",
+                    next: "Следующий",
+                    last: "Последний"
+                },
+                aria: {
+                    sortAscending:  ": activer pour trier la colonne par ordre croissant",
+                    sortDescending: ": activer pour trier la colonne par ordre décroissant"
+                }
+            },
             ajax: '{!! route('clients.data') !!}',
             columns: [
 

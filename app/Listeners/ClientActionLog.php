@@ -32,13 +32,13 @@ class ClientActionLog
 
         switch ($event->getAction()) {
             case 'created':
-                $text = __('Client :company was assigned to :assignee', [
+                $text = __('Клиентская компания :company назначена пользователю :assignee', [
                     'company' => $client->company_name,
                     'assignee' => $client->AssignedUser->name,
                 ]);
                 break;
             case 'updated_assign':
-                $text =  __(':username assigned client to :assignee', [
+                $text =  __(':username назначил клиента пользователю :assignee', [
                     'username' => Auth()->user()->name,
                     'assignee' => $client->AssignedUser->name,
                 ]);

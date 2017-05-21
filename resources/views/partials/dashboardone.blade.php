@@ -105,9 +105,9 @@
                 @foreach($users as $user)
                     <div class="col-lg-1">
                         @if($user->isOnline())
-                            <i class="dot-online" data-toggle="tooltip" title="Online" data-placement="left"></i>
+                            <i class="dot-online" data-toggle="tooltip" title="Онлайн" data-placement="left"></i>
                         @else
-                            <i class="dot-offline" data-toggle="tooltip" title="Offline" data-placement="left"></i>
+                            <i class="dot-offline" data-toggle="tooltip" title="Оффлайн" data-placement="left"></i>
                         @endif
                         <a href="{{route('users.show', $user->id)}}">
                             <img class="small-profile-picture" data-toggle="tooltip" title="{{$user->name}}"

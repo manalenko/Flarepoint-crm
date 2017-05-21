@@ -75,7 +75,7 @@ class UserRepository implements UserRepositoryContract
         $user->department()->attach($requestData->departments);
         $user->save();
 
-        Session::flash('flash_message', 'User successfully added!'); //Snippet in Master.blade.php
+        Session::flash('flash_message', 'Пользователь успешно добавлен!'); //Snippet in Master.blade.php
         return $user;
     }
 
@@ -119,7 +119,7 @@ class UserRepository implements UserRepositoryContract
         $user->roles()->sync([$role]);
         $user->department()->sync([$department]);
 
-        Session::flash('flash_message', 'User successfully updated!');
+        Session::flash('flash_message', 'Пользователь успешно отредактирован!');
 
         return $user;
     }
@@ -131,14 +131,14 @@ class UserRepository implements UserRepositoryContract
     public function destroy($id)
     {
         if ($id == 1) {
-            return Session()->flash('flash_message_warning', 'Not allowed to delete super admin');
+            return Session()->flash('flash_message_warning', 'Удаление не доступно с вашими правами');
         }
         try {
             $user = User::findorFail($id);
             $user->delete();
-            Session()->flash('flash_message', 'User successfully deleted');
+            Session()->flash('flash_message', 'Пользователь успешно удален');
         } catch (\Illuminate\Database\QueryException $e) {
-            Session()->flash('flash_message_warning', 'User can NOT have, leads, clients, or tasks assigned when deleted');
+            Session()->flash('flash_message_warning', 'У пользователя нет лидов и задач, поставленных на удаление');
         }
     }
 }

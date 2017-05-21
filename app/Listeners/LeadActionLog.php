@@ -30,24 +30,24 @@ class LeadActionLog
     {
         switch ($event->getAction()) {
             case 'created':
-                $text = __(':title was created by :creator and assigned to :assignee', [
+                $text = __(':title была создана пользователем :creator и назначена пользователю :assignee', [
                     'title' => $event->getLead()->title,
                     'creator' => $event->getLead()->creator->name,
                     'assignee' => $event->getLead()->user->name
                 ]);
                 break;
             case 'updated_status':
-                $text = __('Lead was completed by :username', [
+                $text = __('Лид был завершен :username', [
                     'username' => Auth()->user()->name,
                 ]);
                 break;
             case 'updated_deadline':
-                $text = __(':username updated the deadline for this lead', [
+                $text = __(':username обновил дату этого лида', [
                     'username' => Auth()->user()->name,
                 ]);
                 break;
             case 'updated_assign':
-                $text = __(':username assigned lead to :assignee', [
+                $text = __(':username назначил лид пользователю :assignee', [
                     'username' => Auth()->user()->name,
                     'assignee' => $event->getLead()->user->name
                 ]);
