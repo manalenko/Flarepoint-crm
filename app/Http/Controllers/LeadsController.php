@@ -95,14 +95,14 @@ class LeadsController extends Controller
     public function store(StoreLeadRequest $request)
     {
         $getInsertedId = $this->leads->create($request);
-        Session()->flash('flash_message', 'Lead is created');
+        Session()->flash('flash_message', 'Лид создан');
         return redirect()->route('leads.show', $getInsertedId);
     }
 
     public function updateAssign($id, Request $request)
     {
         $this->leads->updateAssign($id, $request);
-        Session()->flash('flash_message', 'New user is assigned');
+        Session()->flash('flash_message', 'Ответственный назначен');
         return redirect()->back();
     }
 
@@ -115,7 +115,7 @@ class LeadsController extends Controller
     public function updateFollowup(UpdateLeadFollowUpRequest $request, $id)
     {
         $this->leads->updateFollowup($id, $request);
-        Session()->flash('flash_message', 'New follow up date is set');
+        Session()->flash('flash_message', 'Новая дата установлена');
         return redirect()->back();
     }
 
@@ -142,7 +142,7 @@ class LeadsController extends Controller
     public function updateStatus($id, Request $request)
     {
         $this->leads->updateStatus($id, $request);
-        Session()->flash('flash_message', 'Lead is completed');
+        Session()->flash('flash_message', 'Лид завершен');
         return redirect()->back();
     }
 }

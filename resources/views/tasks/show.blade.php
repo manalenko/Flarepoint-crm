@@ -66,7 +66,7 @@
           'url' => ['tasks/updatestatus', $tasks->id],
           ]) !!}
 
-                {!! Form::submit(__('Close task'), ['class' => 'btn btn-success form-control closebtn']) !!}
+                {!! Form::submit(__('Закрыть задачу'), ['class' => 'btn btn-success form-control closebtn']) !!}
                 {!! Form::close() !!}
 
             @endif
@@ -92,10 +92,10 @@
                 {{ __('Add time') }}
             </button>
 
-            <button type="button" class="btn btn-primary form-control movedown" data-toggle="modal"
-                    data-target="#myModal">
-                {{ __('Create invoice') }}
-            </button>
+            {{--<button type="button" class="btn btn-primary form-control movedown" data-toggle="modal"--}}
+                    {{--data-target="#myModal">--}}
+                {{--{{ __('Create invoice') }}--}}
+            {{--</button>--}}
             
             <div class="activity-feed movedown">
                 @foreach($tasks->activity as $activity)
@@ -115,8 +115,7 @@
                             <h4 class="modal-title" id="myModalLabel">
                             {{ __('Time management') }}
                                 ({{$tasks->title}})</h4>
-                            
-                            }
+
                         </div>
                        {!! Form::open([
                             'method' => 'post',
@@ -128,11 +127,11 @@
 
                             <div class="form-group">
                                 {!! Form::label('title', __('Title'), ['class' => 'control-label']) !!}
-                                {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' =>  Lang::get('task.invoices.modal.title_placerholder')]) !!}
+                                {!! Form::text('title', null, ['class' => 'form-control', 'Введите наименование работ' ]) !!}
                             </div>
                             <div class="form-group">
                                 {!! Form::label('comment',  __('Description'), ['class' => 'control-label']) !!}
-                                {!! Form::textarea('comment', null, ['class' => 'form-control', 'placeholder' => Lang::get('task.invoices.modal.description_placerholder')]) !!}
+                                {!! Form::textarea('comment', null, ['class' => 'form-control', 'Введите описание работ']) !!}
                             </div>
                             <div class="form-group">
                                 {!! Form::label('value', __('Hourly price'), ['class' => 'control-label']) !!}

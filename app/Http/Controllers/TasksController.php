@@ -144,7 +144,7 @@ class TasksController extends Controller
     public function updateStatus($id, Request $request)
     {
         $this->tasks->updateStatus($id, $request);
-        Session()->flash('flash_message', 'Task is completed');
+        Session()->flash('flash_message', 'Задача выполнена');
         return redirect()->back();
     }
 
@@ -159,7 +159,7 @@ class TasksController extends Controller
 
 
         $this->tasks->updateAssign($id, $request);
-        Session()->flash('flash_message', 'New user is assigned');
+        Session()->flash('flash_message', 'Ответственный назначен');
         return redirect()->back();
     }
 
@@ -171,7 +171,7 @@ class TasksController extends Controller
     public function updateTime($id, Request $request)
     {
         $this->tasks->updateTime($id, $request);
-        Session()->flash('flash_message', 'Time has been updated');
+        Session()->flash('flash_message', 'Время обновлено');
         return redirect()->back();
     }
 
@@ -191,7 +191,7 @@ class TasksController extends Controller
             $this->tasks->invoice($id, $request);
         }
         $this->invoices->create($clientId, $timeTaskId, $request->all());
-        Session()->flash('flash_message', 'Invoice created');
+        Session()->flash('flash_message', 'Счет создан');
         return redirect()->back();
     }
 

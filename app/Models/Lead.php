@@ -3,6 +3,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Carbon;
+use \Laravelrus\LocalizedCarbon\Traits\LocalizedEloquentTrait;
 
 class Lead extends Model
 {

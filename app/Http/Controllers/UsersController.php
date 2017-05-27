@@ -60,11 +60,11 @@ class UsersController extends Controller
                 return '<a href="users/' . $users->id . '" ">' . $users->name . '</a>';
             })
             ->add_column('edit', '
-                <a href="{{ route(\'users.edit\', $id) }}" class="btn btn-success" >Edit</a>')
+                <a href="{{ route(\'users.edit\', $id) }}" class="btn btn-success" >Редактировать</a>')
             ->add_column('delete', '
                 <form action="{{ route(\'users.destroy\', $id) }}" method="POST">
             <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" name="submit" value="Delete" class="btn btn-danger" onClick="return confirm(\'Are you sure?\')"">
+            <input type="submit" name="submit" value="Удалить" class="btn btn-danger" onClick="return confirm(\'Удалить?\')"">
 
             {{csrf_field()}}
             </form>')
@@ -95,7 +95,7 @@ class UsersController extends Controller
                     ->format('d/m/Y') : '';
             })
             ->editColumn('status', function ($tasks) {
-                return $tasks->status == 1 ? '<span class="label label-success">Open</span>' : '<span class="label label-danger">Closed</span>';
+                return $tasks->status == 1 ? '<span class="label label-success">Открыта</span>' : '<span class="label label-danger">Закрыта</span>';
             })
             ->editColumn('client_id', function ($tasks) {
                 return $tasks->client->name;
@@ -127,7 +127,7 @@ class UsersController extends Controller
                     ->format('d/m/Y') : '';
             })
             ->editColumn('status', function ($leads) {
-                return $leads->status == 1 ? '<span class="label label-success">Open</span>' : '<span class="label label-danger">Closed</span>';
+                return $leads->status == 1 ? '<span class="label label-success">Открыта</span>' : '<span class="label label-danger">Закрыта</span>';
             })
             ->editColumn('client_id', function ($tasks) {
                 return $tasks->client->name;
@@ -212,7 +212,7 @@ class UsersController extends Controller
     public function update($id, UpdateUserRequest $request)
     {
         $this->users->update($id, $request);
-        Session()->flash('flash_message', 'User successfully updated');
+        Session()->flash('flash_message', 'Информация о пользователе обновлена');
         return redirect()->back();
     }
 

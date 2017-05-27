@@ -53,11 +53,11 @@ class ClientsController extends Controller
                 return '<a href="clients/' . $clients->id . '" ">' . $clients->name . '</a>';
             })
             ->add_column('edit', '
-                <a href="{{ route(\'clients.edit\', $id) }}" class="btn btn-success" >Edit</a>')
+                <a href="{{ route(\'clients.edit\', $id) }}" class="btn btn-success" >Редактировать</a>')
             ->add_column('delete', '
                 <form action="{{ route(\'clients.destroy\', $id) }}" method="POST">
             <input type="hidden" name="_method" value="DELETE">
-            <input type="submit" name="submit" value="Delete" class="btn btn-danger" onClick="return confirm(\'Are you sure?\')"">
+            <input type="submit" name="submit" value="Удалить" class="btn btn-danger" onClick="return confirm(\'Удалить?\')"">
 
             {{csrf_field()}}
             </form>')
@@ -133,7 +133,7 @@ class ClientsController extends Controller
     public function update($id, UpdateClientRequest $request)
     {
         $this->clients->update($id, $request);
-        Session()->flash('flash_message', 'Client successfully updated');
+        Session()->flash('flash_message', 'Данные клиента обновлены');
         return redirect()->route('clients.index');
     }
 
@@ -156,7 +156,7 @@ class ClientsController extends Controller
     public function updateAssign($id, Request $request)
     {
         $this->clients->updateAssign($id, $request);
-        Session()->flash('flash_message', 'New user is assigned');
+        Session()->flash('flash_message', 'Ответственный установлен');
         return redirect()->back();
     }
 
