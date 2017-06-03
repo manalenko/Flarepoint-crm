@@ -16,7 +16,7 @@ class CanUserCreate
     public function handle($request, Closure $next)
     {
         if (!auth()->user()->can('user-create')) {
-            Session()->flash('flash_message_warning', 'Not allowed to create user');
+            Session()->flash('flash_message_warning', 'Вы не можете создавать пользователей');
             return redirect()->route('users.index');
         }
         return $next($request);

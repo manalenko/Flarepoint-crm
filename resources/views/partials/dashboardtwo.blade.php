@@ -5,14 +5,14 @@
             <span class="info-box-icon"><i class="ion ion-ios-book-outline"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">All Tasks</span>
+                <span class="info-box-text">Все задачи</span>
                 <span class="info-box-number">{{$allCompletedTasks}} / {{$alltasks}}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: {{$totalPercentageTasks}}%"></div>
                 </div>
                   <span class="progress-description">
-                    {{number_format($totalPercentageTasks, 0)}}% Completed
+                    {{number_format($totalPercentageTasks, 0)}}% Завершен
                   </span>
             </div>
             <!-- /.info-box-content -->
@@ -24,14 +24,14 @@
             <span class="info-box-icon"><i class="ion ion-stats-bars"></i></span>
 
             <div class="info-box-content">
-                <span class="info-box-text">All Leads</span>
+                <span class="info-box-text">Все лиды</span>
                 <span class="info-box-number">{{$allCompletedLeads}} / {{$allleads}}</span>
 
                 <div class="progress">
                     <div class="progress-bar" style="width: {{$totalPercentageLeads}}%"></div>
                 </div>
                   <span class="progress-description">
-                    {{number_format($totalPercentageLeads, 0)}}% Completed
+                    {{number_format($totalPercentageLeads, 0)}}% Завершен
                   </span>
             </div>
             <!-- /.info-box-content -->

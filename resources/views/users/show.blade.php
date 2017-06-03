@@ -14,9 +14,9 @@
                     <th>
                         <select name="status" id="status-task">
                         <option value="" disabled selected>{{ __('Status') }}</option>
-                            <option value="open">Open</option>
-                            <option value="closed">Closed</option>
-                            <option value="all">All</option>
+                            <option value="open">Открытые</option>
+                            <option value="closed">Закрытые</option>
+                            <option value="all">Все</option>
                         </select>
                     </th>
                 </tr>
@@ -36,9 +36,9 @@
                     <th>
                         <select name="status" id="status-lead">
                         <option value="" disabled selected>{{ __('Status') }}</option>
-                            <option value="open">Open</option>
-                            <option value="closed">Closed</option>
-                            <option value="all">All</option>
+                            <option value="open">Открытые</option>
+                            <option value="closed">Закрытые</option>
+                            <option value="all">Все</option>
                         </select>
                     </th>
                 </tr>
@@ -81,6 +81,28 @@
               var table = $('#tasks-table').DataTable({
                     processing: true,
                     serverSide: true,
+                  language: {
+                      edit: "Редактировать",
+                      search: "Поиск",
+                      processing:     "Обработка",
+                      lengthMenu:    "Выводить _MENU_ записей",
+                      info:           "Показаны записи с _START_ по _END_ из _TOTAL_",
+                      infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                      infoPostFix:    "",
+                      loadingRecords: "Загрузка...",
+                      zeroRecords:    "Нет записей",
+                      emptyTable:     "Нет данных",
+                      paginate: {
+                          first: "Первый",
+                          previous: "Предыдущий",
+                          next: "Следующий",
+                          last: "Последний"
+                      },
+                      aria: {
+                          sortAscending:  ": activer pour trier la colonne par ordre croissant",
+                          sortDescending: ": activer pour trier la colonne par ordre décroissant"
+                      }
+                  },
                     ajax: '{!! route('users.taskdata', ['id' => $user->id]) !!}',
                     columns: [
 
@@ -145,6 +167,28 @@
               var table = $('#leads-table').DataTable({
                     processing: true,
                     serverSide: true,
+                  language: {
+                      edit: "Редактировать",
+                      search: "Поиск",
+                      processing:     "Обработка",
+                      lengthMenu:    "Выводить _MENU_ записей",
+                      info:           "Показаны записи с _START_ по _END_ из _TOTAL_",
+                      infoFiltered:   "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
+                      infoPostFix:    "",
+                      loadingRecords: "Загрузка...",
+                      zeroRecords:    "Нет записей",
+                      emptyTable:     "Нет данных",
+                      paginate: {
+                          first: "Первый",
+                          previous: "Предыдущий",
+                          next: "Следующий",
+                          last: "Последний"
+                      },
+                      aria: {
+                          sortAscending:  ": activer pour trier la colonne par ordre croissant",
+                          sortDescending: ": activer pour trier la colonne par ordre décroissant"
+                      }
+                  },
                     ajax: '{!! route('users.leaddata', ['id' => $user->id]) !!}',
                     columns: [
 

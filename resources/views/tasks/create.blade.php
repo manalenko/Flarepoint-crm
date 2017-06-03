@@ -1,6 +1,6 @@
 @extends('layouts.master')
 @section('heading')
-    <h1>Create task</h1>
+    <h1>{!!__('Create task')!!}</h1>
 @stop
 
 @section('content')
@@ -28,7 +28,7 @@
         <div class="form-group col-sm-6 removeleft removeright">
             {!! Form::label('status', __('Status'), ['class' => 'control-label']) !!}
             {!! Form::select('status', array(
-            '1' => 'Open', '2' => 'Completed'), null, ['class' => 'form-control'] )
+            '1' => 'Открытая', '2' => 'Завершенная'), null, ['class' => 'form-control'] )
          !!}
         </div>
 
